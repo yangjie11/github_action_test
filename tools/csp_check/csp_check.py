@@ -1,6 +1,16 @@
 import os
 import time
+import logging
 import subprocess
+
+
+def init_logger():
+    log_format = "[%(filename)s %(lineno)d %(levelname)s] %(message)s "
+    date_format = '%Y-%m-%d  %H:%M:%S %a '
+    logging.basicConfig(level=logging.WARN,
+                        format=log_format,
+                        datefmt=date_format,
+                        )
 
 
 def execute_command(cmd_string, cwd=None, shell=True):
@@ -18,6 +28,7 @@ def execute_command(cmd_string, cwd=None, shell=True):
 
 
 def main():
+    init_logger()
     execute_command("apt update && apt -y upgrade && apt -y install unzip")
     os.chdir("/rt-thread/sdk-index/tools/csp_check")
     execute_command("chmod 777 prj_gen")

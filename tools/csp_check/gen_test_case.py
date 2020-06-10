@@ -73,7 +73,7 @@ def get_generate_result(csp_json_path):
         with open("generate.log", "r") as f:
             log_info = f.readlines()
     except Exception as e:
-        print("Error message : {0}".format(e))
+        logging.error("Error message : {0}".format(e))
     for line in log_info:
         if line.find("Error") != -1 or line.find("error") != -1 or line.find("ERROR") != -1:
             logging.error(line)
