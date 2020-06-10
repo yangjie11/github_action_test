@@ -28,6 +28,3 @@ jobs:
 
     - name: script
       run: repo_root=$(pwd) && cd $repo_root/tools && chmod a+x script.sh && source script.sh
-    
-    - name: run docker image
-      run: docker run -v "`pwd`:/rt-thread/travisci_test" -i summergift/csp_test:v1.0 bash -c "python /rt-thread/travisci_test/test.py" 
