@@ -4,12 +4,22 @@ name: sdk-index
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
+  # runs at 00:00 UTC every day
+  schedule:
+    - cron:  '0 0 * * *'
   push:
     branches: [ master ]
+    paths-ignore:
+      - docs/**
+      - cmake/**
+      - scripts/**
   pull_request:
     branches: [ master ]
+    paths-ignore:
+      - docs/**
+      - cmake/**
+      - scripts/**
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -17,11 +27,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out the repo
-      uses: actions/checkout@v2 
+    - uses: actions/checkout@v2 
 
-    - name: Csp test start
+    - name: Set up Python
+      uses: actions/setup-python@master
+      with:
+      python-version: 3.8
+
+    - name: Run unit tests
       run: |
-        python3 -m pip install pytest && python3 test2.py
-        ls -al
-      shell: bash
+        pip install pytest
+        pytest
+    - name: Wemake Python Stylguide
+    uses: wemake-services/wemake-python-styleguide@0.13.4
+    continue-on-error: true
+    with:
+    reporter: 'github-pr-review'
+    env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
