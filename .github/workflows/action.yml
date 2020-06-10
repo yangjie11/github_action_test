@@ -22,7 +22,6 @@ jobs:
 
     - name: Csp test start
       run: |
-        
+        pip install pytest && python test2.py
         ls -al
-        python test2.py
       shell: bash
