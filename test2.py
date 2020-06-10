@@ -24,6 +24,7 @@ def test_case1():
     print("This is debug message!\n")
     print("This is warning message!\n")
     print("This is error message!\n")
+    logging.error("This is error message too!\n")
     assert 1==2
 
 if __name__ == "__main__":
