@@ -22,11 +22,6 @@ jobs:
 
     - name: Csp test start
       run: |
-        # repo_root=$(pwd) && cd $repo_root/tools 
-        # chmod a+x before_install.sh && source before_install.sh
-        # sudo apt-get install python3-pip python3-setuptools python3-wheel -y
-        # python3 -m pip install wheel jsonschema PyEmail
-        # chmod a+x script.sh && source script.sh
-        
+        ls -al
         python test2.py
       shell: bash
