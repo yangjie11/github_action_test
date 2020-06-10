@@ -1,4 +1,5 @@
 import os
+import pytest
 import logging
 
 
@@ -13,6 +14,7 @@ def init_logger():
 
 def main():
     init_logger()
+    logging.warning("Start test")
     os.system("pytest test2.py -s")
 
 
