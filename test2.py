@@ -1,4 +1,5 @@
 import os
+import time
 import pytest
 import logging
 
@@ -15,6 +16,9 @@ def init_logger():
 def main():
     init_logger()
     logging.warning("Start test")
+    while True:
+        print("Hello world!")
+        time.sleep(5)
     pytest.main(["test2.py", '-s', '--tb=line'])
 
 
