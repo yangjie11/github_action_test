@@ -16,17 +16,14 @@ def init_logger():
 def main():
     init_logger()
     logging.warning("Start test")
-    while True:
-        print("Hello world!")
-        time.sleep(5)
-    pytest.main(["test2.py", '-s', '--tb=line'])
+    pytest.main(["test2.py", '-s', '--capture=sys'])
 
 
 def test_case1():
-    logging.info("This is info message!\n")
-    logging.debug("This is debug message!\n")
-    logging.warning("This is warning message!\n")
-    logging.error("This is error message!\n")
+    print("This is info message!\n")
+    print("This is debug message!\n")
+    print("This is warning message!\n")
+    print("This is error message!\n")
     assert 1==2
 
 if __name__ == "__main__":
