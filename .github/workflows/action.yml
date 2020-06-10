@@ -27,5 +27,6 @@ jobs:
         # sudo apt-get install python3-pip python3-setuptools python3-wheel -y
         # python3 -m pip install wheel jsonschema PyEmail
         # chmod a+x script.sh && source script.sh
+        
         python test2.py
       shell: bash
