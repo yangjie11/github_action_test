@@ -22,6 +22,7 @@ jobs:
 
     - name: Csp test start
       run: |
+        
         ls -al
         python test2.py
       shell: bash
