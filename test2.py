@@ -15,7 +15,7 @@ def init_logger():
 def main():
     init_logger()
     logging.warning("Start test")
-    pytest.main(["test2.py", '-s'])
+    pytest.main(["test2.py", '-s', '--tb=no'])
 
 
 def test_case1():
