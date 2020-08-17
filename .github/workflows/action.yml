@@ -38,10 +38,3 @@ jobs:
         ls -al
         pip install pytest
         pip install pytest-cov
-        pytest --cov ./tools/csp_check/ --cov-report=xml
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.SMTP_PWD }}
-        file: ./coverage.xml
-        flags: unittests
