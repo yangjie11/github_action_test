@@ -34,4 +34,5 @@ jobs:
         python-version: 3.8
     - name: Run unit tests
       run: |
+        pip install selenium
         python rt-thread-club.py
