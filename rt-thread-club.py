@@ -6,7 +6,7 @@ from selenium import webdriver
 
 
 def main():
-    os.system("chromedriver")
+
     driver = webdriver.Chrome()
     driver.set_window_position(20,40)
     driver.set_window_size(1100,700)
@@ -28,6 +28,7 @@ def main():
     time.sleep(10)
     driver.find_element_by_link_text(u"立即签到").click()
     driver.quit()
+    print("Sign in\n")
 
 
 if __name__ == "__main__":

@@ -35,6 +35,5 @@ jobs:
         python-version: 3.8
     - name: Run unit tests
       run: |
-        pip install selenium
         docker pull summergift/csp_test:v1.0
-        docker run -v "`pwd`" -it summergift/csp_test:v1.0 bash -c "python /github_action_test/rt-thread-club.py"
+        docker run -v "`pwd`:/rt-thread/actions" -i summergift/csp_test:v1.0 bash -c "pip install selenium && python /rt-thread/actions/actions.py"
