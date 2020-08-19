@@ -34,4 +34,4 @@ jobs:
         python-version: 3.8
     - name: Run unit tests
       run: |
-        python qemu.py
+        python rt-thread-club.py
