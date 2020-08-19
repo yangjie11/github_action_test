@@ -6,7 +6,8 @@ from selenium import webdriver
 
 
 def main():
-
+    os.chdir("/rt-thread/actions")
+    os.system("chmod a+x chromedriver")
     driver = webdriver.Chrome()
     driver.set_window_position(20,40)
     driver.set_window_size(1100,700)
