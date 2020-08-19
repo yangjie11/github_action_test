@@ -6,7 +6,8 @@ from selenium import webdriver
 
 
 def main():
-    driver = webdriver.Chrome("/usr/lib/chromium-browser/chromedriver")
+    os.system("chromedriver")
+    driver = webdriver.Chrome()
     driver.set_window_position(20,40)
     driver.set_window_size(1100,700)
 
@@ -30,6 +31,4 @@ def main():
 
 
 if __name__ == "__main__":
-    os.system("sudo apt-get install chromium-chromedriver")
-    os.system("ls -al /usr/lib/")
     main()
