@@ -9,7 +9,6 @@ def main():
     path = "qemu-vexpress-a9"
     retval = os.getcwd()
     os.chdir(path)
-    os.system("ls -al")
     os.system("scons -j2")
     os.system("sudo chmod a+x qemu.sh")
     sys.exit(0)
