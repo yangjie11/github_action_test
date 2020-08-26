@@ -1,0 +1,13 @@
+language: shell
+
+services:
+  - docker
+
+notifications:
+  email: false
+
+install:
+  docker pull summergift/csp_test:v1.0
+  
+script:
+  docker run -v "`pwd`:/rt-thread/actions" -i summergift/csp_test:v1.0 bash -c "pip install selenium && python /rt-thread/actions/actions.py"
