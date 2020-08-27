@@ -33,13 +33,14 @@ jobs:
       uses: actions/setup-python@master
       with:
         python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools wheel twine
     - name: check in
       shell: bash
       env:
         CLUB_USERNAME: ${{ secrets.USERNAME }}
         CLUB_PASSWORD: ${{ secrets.PASSWORD }}
       run: |
-        echo $CLUB_USERNAME
-        echo $CLUB_PASSWORD
-        env
-        sudo python actions.py
+        python actions.py
