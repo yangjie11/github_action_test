@@ -1,6 +1,20 @@
 import os
 import logging
+import subprocess
 
+
+def execute_command(cmd_string, cwd=None, shell=True):
+    """Execute the system command at the specified address."""
+
+    sub = subprocess.Popen(cmd_string, cwd=cwd, stdin=subprocess.PIPE,
+                           stdout=subprocess.PIPE, shell=shell, bufsize=4096)
+
+    stdout_str = ''
+    while sub.poll() is None:
+        stdout_str += str(sub.stdout.read(), encoding="UTF-8")
+        time.sleep(0.1)
+
+    return stdout_str
 
 def init_logger():
     log_format = " %(filename)s %(lineno)d <ignore> %(levelname)s %(message)s "
@@ -13,7 +27,8 @@ def init_logger():
 
 def main():
     print("python env : ")
-    os.system("env")
+    result = execute_command("env", shell=True)
+    print(result)
 #     os.system("sudo apt -y update && apt -y upgrade")
 #     os.system("sudo apt -y install unzip")
 #     os.system("sudo apt -y install curl")
