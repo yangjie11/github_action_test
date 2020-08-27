@@ -6,10 +6,6 @@ import time
 
 
 def main():
-    env_list = os.environ
-    for i in env_list:
-        print(i)
-
 #     option = webdriver.ChromeOptions()
 #     option.add_argument('headless')
 #     option.add_argument('no-sandbox')
