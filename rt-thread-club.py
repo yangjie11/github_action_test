@@ -5,10 +5,7 @@ import time
 from selenium import webdriver
 
 
-def main():
-    username = os.environ["CLUB_USERNAME"]
-    password = os.environ["CLUB_PASSWORD"]
-    
+def login_in_club(user_name, pass_word):
     option = webdriver.ChromeOptions()
     option.add_argument('headless')
     option.add_argument('no-sandbox')
@@ -21,11 +18,11 @@ def main():
     driver.find_element_by_id("username").click()
     driver.find_element_by_id('username').clear()
     time.sleep(1)
-    driver.find_element_by_id('username').send_keys(username)
+    driver.find_element_by_id('username').send_keys(user_name)
     driver.find_element_by_id('password').click()
     driver.find_element_by_id('password').clear()
     time.sleep(1)
-    driver.find_element_by_id('password').send_keys(password)
+    driver.find_element_by_id('password').send_keys(pass_word)
     driver.find_element_by_id('login').click()
     time.sleep(30)
     driver.switch_to.window(driver.window_handles[-1])
@@ -37,7 +34,3 @@ def main():
 
     driver.quit()
     print("Sign in\n")
-
-
-if __name__ == "__main__":
-    main()
