@@ -31,12 +31,8 @@ def main():
     driver.switch_to.window(driver.window_handles[-1])
     print("driver.current_url : {0}".format(driver.current_url))
     try:
-        #driver.find_element_by_xpath('/html[1]/body[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/a[1]').click()
-        #driver.find_element_by_class_name("btn-signin")[0].click()
-        # driver.find_element_by_link_text(u"立即签到").click()
-        element = WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.LINK_TEXT, u"立即签到")))
+        driver.find_element_by_link_text(u"立即签到").click()
     except Exception as e:
-        print("over time!");
         print("Error message : {0}".format(e))
 
     driver.quit()
