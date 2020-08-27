@@ -27,20 +27,17 @@ def init_logger():
 
 
 def main():
-    print("python env : ")
-    result = execute_command("env", shell=True)
-    print(result)
-#     os.system("sudo apt -y update && apt -y upgrade")
-#     os.system("sudo apt -y install unzip")
-#     os.system("sudo apt -y install curl")
-#     os.system("sudo python -m pip install --upgrade pip")
-#     os.system("sudo pip install selenium")
-#     os.system("sudo chmod a+x chromedriver")
-#     os.system("sudo pip install selenium")
-#     os.system("sudo apt install -y gconf-service libasound2 libatk1.0-0 libcairo2 libcups2 libfontconfig1 libgdk-pixbuf2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libxss1 fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils")
-#     os.system("sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb")
-#     os.system("sudo dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install")
-    os.system("sudo python rt-thread-club.py")
+    execute_command("sudo apt -y update && apt -y upgrade")
+    execute_command("sudo apt -y install unzip")
+    execute_command("sudo apt -y install curl")
+    execute_command("sudo python -m pip install --upgrade pip")
+    execute_command("sudo pip install selenium")
+    execute_command("sudo chmod a+x chromedriver")
+    execute_command("sudo pip install selenium")
+    execute_command("sudo apt install -y gconf-service libasound2 libatk1.0-0 libcairo2 libcups2 libfontconfig1 libgdk-pixbuf2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libxss1 fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils")
+    execute_command("sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb")
+    execute_command("sudo dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install")
+    execute_command("sudo python rt-thread-club.py")
 
 
 if __name__ == "__main__":
