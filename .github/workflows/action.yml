@@ -38,5 +38,7 @@ jobs:
         CLUB_USERNAME: ${{ secrets.USERNAME }}
         CLUB_PASSWORD: ${{ secrets.PASSWORD }}
       run: |
+        echo $CLUB_USERNAME
+        echo $CLUB_PASSWORD
         python --version
         sudo python actions.py
