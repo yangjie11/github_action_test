@@ -28,6 +28,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
+    - shell: bash
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@master
