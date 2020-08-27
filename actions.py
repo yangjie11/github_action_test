@@ -17,7 +17,6 @@ def main():
     os.system("apt -y install curl")
     os.system("python -m pip install --upgrade pip")
     os.system("pip install selenium")
-    os.chdir("/rt-thread/actions")
     os.system("chmod a+x chromedriver")
     os.system("mv /rt-thread/actions/chromedriver /usr/local/bin")
     os.system("ls -al /usr/local/bin")
