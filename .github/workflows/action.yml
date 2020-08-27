@@ -35,8 +35,8 @@ jobs:
         python-version: 3.8
     - name: check in
       env:
-        USERNAME: ${{ secrets.USERNAME }}
-        PASSWORD: ${{ secrets.PASSWORD }}
+        CLUB_USERNAME: ${{ secrets.USERNAME }}
+        CLUB_PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         python --version
         sudo python actions.py
