@@ -27,6 +27,9 @@ def init_logger():
 
 
 def main():
+    username = os.environ["CLUB_USERNAME"]
+    password = os.environ["CLUB_PASSWORD"]
+        
     execute_command("sudo apt -y update && apt -y upgrade")
     execute_command("sudo apt -y install unzip")
     execute_command("sudo apt -y install curl")
