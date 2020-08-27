@@ -6,14 +6,8 @@ from selenium import webdriver
 
 
 def main():
-    try:
-        username = os.environ["CLUB_USERNAME"]
-    except Exception as e:
-        print("Error message : {0}".format(e))
-    try:
-        password = os.environ["CLUB_PASSWORD"]
-    except Exception as e:
-        print("Error message : {0}".format(e))
+    username = os.environ["CLUB_USERNAME"]
+    password = os.environ["CLUB_PASSWORD"]
     
     option = webdriver.ChromeOptions()
     option.add_argument('headless')
