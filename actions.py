@@ -12,6 +12,8 @@ def init_logger():
 
 
 def main():
+    print("python env : ")
+    os.system("env")
 #     os.system("sudo apt -y update && apt -y upgrade")
 #     os.system("sudo apt -y install unzip")
 #     os.system("sudo apt -y install curl")
