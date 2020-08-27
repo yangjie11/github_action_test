@@ -13,7 +13,7 @@ def main():
     option.add_argument('headless')
     option.add_argument('no-sandbox')
     option.add_argument('disable-dev-shm-usage')
-    driver = webdriver.Chrome('/usr/local/bin/chromedriver', chrome_options=option)
+    driver = webdriver.Chrome(chrome_options=option)
 
     # login in
     driver.get("https://www.rt-thread.org/account/user/index.html?response_type=code&authorized=yes&scope=basic&state=1588816557615&client_id=30792375&redirect_uri=https://club.rt-thread.org/index/user/login.html")
