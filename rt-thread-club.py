@@ -33,7 +33,7 @@ def main():
 #         print("Error message : {0}".format(e))
 
 #     driver.quit()
-#     print("Sign in\n")
+    print("Sign in\n")
 
 
 if __name__ == "__main__":
