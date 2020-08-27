@@ -2,6 +2,7 @@
 import os
 import sys
 import time
+import logging
 from selenium import webdriver
 
 
@@ -26,7 +27,7 @@ def login_in_club(user_name, pass_word):
     driver.find_element_by_id('login').click()
     time.sleep(30)
     driver.switch_to.window(driver.window_handles[-1])
-    print("driver.current_url : {0}".format(driver.current_url))
+    logging.info("driver.current_url : {0}".format(driver.current_url))
     try:
         driver.find_element_by_link_text(u"立即签到").click()
     except Exception as e:
