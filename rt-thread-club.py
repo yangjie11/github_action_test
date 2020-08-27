@@ -9,9 +9,6 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 def main():
-    username  = os.environ["USERNAME"]
-    password  = os.environ["PASSWORD"]
-    
     option = webdriver.ChromeOptions()
     option.add_argument('headless')
     option.add_argument('no-sandbox')
@@ -24,11 +21,11 @@ def main():
     driver.find_element_by_id("username").click()
     driver.find_element_by_id('username').clear()
     time.sleep(1)
-    driver.find_element_by_id('username').send_keys(username)
+    driver.find_element_by_id('username').send_keys(${{ secrets.USERNAME}})
     driver.find_element_by_id('password').click()
     driver.find_element_by_id('password').clear()
     time.sleep(1)
-    driver.find_element_by_id('password').send_keys(password)
+    driver.find_element_by_id('password').send_keys(${{ secrets.PASSWORD}})
     driver.find_element_by_id('login').click()
     time.sleep(30)
     driver.switch_to.window(driver.window_handles[-1])
