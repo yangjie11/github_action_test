@@ -39,4 +39,4 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         docker pull summergift/csp_test:v1.0
-        docker run -v "`pwd`:/rt-thread/actions" -i summergift/csp_test:v1.0 -e USERNAME bash -c "pip install selenium && python /rt-thread/actions/actions.py"	        
+        docker run -v "`pwd`:/rt-thread/actions" -i summergift/csp_test:v1.0 bash -c "pip install selenium && python /rt-thread/actions/actions.py"	        
