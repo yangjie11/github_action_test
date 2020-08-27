@@ -12,6 +12,9 @@ def init_logger():
 
 
 def main():
+    env_dist = os.environ
+    print(env_dist['USERNAME'])
+    print(env_dist['PASSWORD'])
     os.system("apt -y update && apt -y upgrade")
     os.system("apt -y install unzip")
     os.system("apt -y install curl")
