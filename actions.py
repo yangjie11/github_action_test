@@ -12,6 +12,7 @@ def init_logger():
 
 
 def main():
+    os.chdir("/rt-thread/actions")
     os.system("apt -y update && apt -y upgrade")
     os.system("apt -y install unzip")
     os.system("apt -y install curl")
