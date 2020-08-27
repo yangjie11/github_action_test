@@ -40,5 +40,5 @@ jobs:
       run: |
         echo $CLUB_USERNAME
         echo $CLUB_PASSWORD
-        python --version
+        env
         sudo python actions.py
