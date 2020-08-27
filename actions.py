@@ -11,7 +11,7 @@ def execute_command(cmd_string, cwd=None, shell=True):
 
     stdout_str = ''
     while sub.poll() is None:
-        stdout_str += str(sub.stdout.read(), encoding="UTF-8")
+        stdout_str += str(sub.stdout.read())
         time.sleep(0.1)
 
     return stdout_str
