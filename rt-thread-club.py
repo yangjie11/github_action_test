@@ -9,6 +9,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 def main():
+    username = os.environ["USERNAME"]
+    password = os.environ["PASSWORD"]
+
     option = webdriver.ChromeOptions()
     option.add_argument('headless')
     option.add_argument('no-sandbox')
