@@ -40,4 +40,4 @@ jobs:
       run: |
         env
         #docker pull summergift/csp_test:v1.0
-        pip install selenium && python /rt-thread/actions/actions.py"
+        pip install selenium && python actions.py"
