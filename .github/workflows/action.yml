@@ -28,13 +28,13 @@ jobs:
     timeout-minutes: 10
 
     steps:
-    - shell: bash
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@master
       with:
         python-version: 3.8
     - name: check in
+      shell: bash
       env:
         CLUB_USERNAME: ${{ secrets.USERNAME }}
         CLUB_PASSWORD: ${{ secrets.PASSWORD }}
