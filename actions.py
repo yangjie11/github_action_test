@@ -13,7 +13,7 @@ def init_logger():
 
 def main():
     env_dist = os.environ
-    for i in env_dist
+    for i in env_dist:
         print(i)
 #     os.system("apt -y update && apt -y upgrade")
 #     os.system("apt -y install unzip")
