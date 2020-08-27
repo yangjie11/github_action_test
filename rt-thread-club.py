@@ -9,8 +9,8 @@ def main():
     env_list = os.environ
     for i in env_list:
         print(i)
-    username = os.environ["USERNAME"]
-    password = os.environ["PASSWORD"]
+    username = os.environ["CLUB_USERNAME"]
+    password = os.environ["CLUB_PASSWORD"]
 
 #     option = webdriver.ChromeOptions()
 #     option.add_argument('headless')
