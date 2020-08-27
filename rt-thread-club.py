@@ -16,7 +16,7 @@ def main():
     driver = webdriver.Chrome('/usr/local/bin/chromedriver', chrome_options=option)
 
     # login in
-    driver.get("https://www.rt-thread.org/account/user/index.html")
+    driver.get("https://www.rt-thread.org/account/user/index.html?response_type=code&authorized=yes&scope=basic&state=1588816557615&client_id=30792375&redirect_uri=https://club.rt-thread.org/index/user/login.html")
 
     driver.find_element_by_id("username").click()
     driver.find_element_by_id('username').clear()
@@ -28,8 +28,8 @@ def main():
     driver.find_element_by_id('password').send_keys("qwer123456")
     driver.find_element_by_id('login').click()
     time.sleep(30)
-
     driver.switch_to.window(driver.window_handles[-1])
+    print("driver.current_url : {0}".format(driver.current_url))
     try:
         #driver.find_element_by_xpath('/html[1]/body[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[2]/a[1]').click()
         #driver.find_element_by_class_name("btn-signin")[0].click()

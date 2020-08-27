@@ -2,10 +2,6 @@ import os
 import logging
 
 
-CHROMEDRIVER = r"wget http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip"
-ZIP_NAME = r"chromedriver.zip"
-
-
 def init_logger():
     log_format = " %(filename)s %(lineno)d <ignore> %(levelname)s %(message)s "
     date_format = '%Y-%m-%d  %H:%M:%S %a '
@@ -20,6 +16,7 @@ def main():
     os.system("apt -y install unzip")
     os.system("apt -y install curl")
     os.system("python -m pip install --upgrade pip")
+    os.system("pip install selenium")
     os.chdir("/rt-thread/actions")
     os.system("chmod a+x chromedriver")
     os.system("mv /rt-thread/actions/chromedriver /usr/local/bin")
